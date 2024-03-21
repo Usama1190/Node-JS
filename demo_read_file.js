@@ -80,10 +80,31 @@
 
 
 // Rename file
-var fs = require('fs');
+// var fs = require('fs');
 
-// Rename the file 'mynewfile3.txt' to 'myrenamefile.txt':
-fs.rename('mynewfile3.txt', 'myrenamefile.txt', function(err) {
-    if(err) throw err;
-    console.log('File Renamed!');
-});
+// // Rename the file 'mynewfile3.txt' to 'myrenamefile.txt':
+// fs.rename('mynewfile3.txt', 'myrenamefile.txt', function(err) {
+//     if(err) throw err;
+//     console.log('File Renamed!');
+// });
+
+
+
+// url module
+const { log } = require('console');
+var url = require('url');
+var adr = 'http://localhost:8080/default.htm?year=2017&month=february';
+
+// Parse the address
+var q = url.parse(adr, true);
+
+// The parse method returns an object containingurl properties
+console.log(q.host);
+console.log(q.pathname);
+console.log(q.search);
+
+// the query properties returns an object with all the querystring parameters
+// as properties
+
+var qdata = q.query;
+console.log(qdata.month);
